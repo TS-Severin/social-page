@@ -10,7 +10,6 @@ export default async function Home() {
       {/* {posts.hashtags.map((hashtag: string) => (
    <h1 key={posts.sys.id}>{hashtag}</h1>
       ))} */}
-      {console.log(posts)}
     </main>
   );
 }
