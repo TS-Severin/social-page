@@ -1,10 +1,10 @@
 // contentmodel for posts
 
-const POST_GRAPHQL_FIELDS = `
+const POSTS_GRAPHQL_FIELDS = `
 sys {
   id
 }
-  profileUsername
+profileusername
 `;
 
 async function fetchGraphQL(query, preview = false) {
@@ -24,14 +24,14 @@ async function fetchGraphQL(query, preview = false) {
       body: JSON.stringify({ query }),
       // Associate all fetches for articles with an "articles" cache tag so content can
       // be revalidated or updated from Contentful on publish
-      next: { tags: ["post"] },
+      next: { tags: ["posts"] },
 
     }
   ).then((response) => response.json());
 }
 
 function extractPosts(fetchResponse) {
-  return fetchResponse?.data?.postCollection?.items;
+  return fetchResponse?.data?.postsCollection?.items;
 }
 
 
@@ -39,10 +39,10 @@ export async function getPosts(
   isDraftMode = false) {
   const allPosts = await fetchGraphQL(
     `query {
-        postCollection(preview: ${isDraftMode ? "true" : "false"
+        postsCollection(preview: ${isDraftMode ? "true" : "false"
     }) { 
           items {
-            ${POST_GRAPHQL_FIELDS}
+            ${POSTS_GRAPHQL_FIELDS}
           }
         }
       }`, isDraftMode
