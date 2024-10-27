@@ -4,7 +4,19 @@ const POSTS_GRAPHQL_FIELDS = `
 sys {
   id
 }
+hashtags
 profileusername
+profilepicture {
+  url
+}
+postpicturesCollection {
+  items {
+    url
+  }
+}
+posttext {
+  json 
+}
 `;
 
 async function fetchGraphQL(query, preview = false) {
