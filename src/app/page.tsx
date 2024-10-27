@@ -7,9 +7,9 @@ export default async function Home() {
   return (
     <main>
       <h1>hello world</h1>
-      {/* {posts.hashtags.map((hashtag: string) => (
-   <h1 key={posts.sys.id}>{hashtag}</h1>
-      ))} */}
+      {/* { {posts.profileusername.map((profileusername: string) => (
+   <h1 key={posts.sys.id}>{profileusername}</h1>
+      ))} } */}
     </main>
   );
 }
