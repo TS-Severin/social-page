@@ -28,7 +28,7 @@ export default async function Home() {
           <div key={post.sys.id}>
             <h1>{post.profileusername}</h1>
             <Image
-              src="{post.profilepicture.url}"
+              src={post.profilepicture.url}
               width={500}
               height={500}
               alt="Picture of the author"
