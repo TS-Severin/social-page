@@ -1,4 +1,3 @@
-import Image from "../../node_modules/next/image";
 import { Post } from "../lib/types";
 
 interface PostCardProps {
