@@ -1,4 +1,5 @@
 import { Post } from "../lib/types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 interface PostCardProps {
   postsData: Post[];
@@ -7,11 +8,11 @@ interface PostCardProps {
 export const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
   return (
     <>
-      <h1>testing</h1>
       {postsData.map((post) => (
         <div key={post.sys.id}>
           <h1>{post.profileusername}</h1>
           <p>{post.hashtags}</p>
+          <p>{documentToReactComponents(post.posttext.json)}</p>
         </div>
       ))}
     </>
