@@ -5,7 +5,6 @@ import { Post } from "../lib/types";
 export default async function Home() {
   // Fetch posts directly within the component
   const posts: Post[] = await getPosts();
-  console.log("all the posts", posts);
 
   return (
     <main>
