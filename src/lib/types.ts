@@ -11,5 +11,5 @@ export interface Post {
   profilepicture: {
     url: string;
   };
-  postpicturesCollection: { items: string[] };
+  postpicturesCollection: { items: { url: string }[] };
 }
