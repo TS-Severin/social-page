@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { Post } from "../lib/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { INLINES } from "@contentful/rich-text-types";
+// import { INLINES } from "@contentful/rich-text-types";
 
 interface PostCardProps {
   postsData: Post[];
