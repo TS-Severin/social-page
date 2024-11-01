@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { Post } from "../lib/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { INLINES } from "@contentful/rich-text-types";
+import { INLINES, Node } from "@contentful/rich-text-types";
 
 interface PostCardProps {
   postsData: Post[];
@@ -12,8 +12,10 @@ interface PostCardProps {
 // makes the links in the posttext open links in a new tab
 const options = {
   renderNode: {
-    paragraph: (node, children) => <p className="inline">{children}</p>,
-    [INLINES.HYPERLINK]: (node, children) => (
+    paragraph: (node: Node, children: React.ReactNode) => (
+      <p className="inline">{children}</p>
+    ),
+    [INLINES.HYPERLINK]: (node: Node, children: React.ReactNode) => (
       <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
