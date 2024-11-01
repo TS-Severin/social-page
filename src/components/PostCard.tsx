@@ -12,10 +12,8 @@ interface PostCardProps {
 // makes the links in the posttext open links in a new tab
 const options = {
   renderNode: {
-    paragraph: (node: any, children: any) => (
-      <p className="inline">{children}</p>
-    ),
-    [INLINES.HYPERLINK]: (node: any, children: any) => (
+    paragraph: (node, children) => <p className="inline">{children}</p>,
+    [INLINES.HYPERLINK]: (node, children) => (
       <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
