@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import { Post } from "../lib/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { INLINES, Node } from "@contentful/rich-text-types";
+import { ImageSlider } from "./ImageSlider";
 
 interface PostCardProps {
   postsData: Post[];
@@ -44,7 +45,9 @@ export const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
               </div>
 
               <section className="relative overflow-hidden"></section>
-              <h1>here comes the slider component</h1>
+              <ImageSlider
+                postpicturesCollection={post.postpicturesCollection}
+              />
               <div className="p-[16px]">
                 <div>
                   <strong>spiced academy </strong>
