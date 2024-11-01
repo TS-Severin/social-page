@@ -8,8 +8,8 @@ interface PostCardProps {
   postsData: Post[];
 }
 
-makes the p take being showed inline to avoid a break between profilename and the posttext
-makes the links in the posttext open links in a new tab
+// makes the p take being showed inline to avoid a break between profilename and the posttext
+// makes the links in the posttext open links in a new tab
 const options = {
   renderNode: {
     paragraph: (node, children) => <p className="inline">{children}</p>,
