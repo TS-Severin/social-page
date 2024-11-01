@@ -2,24 +2,24 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { Post } from "../lib/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-// import { INLINES } from "@contentful/rich-text-types";
+import { INLINES } from "@contentful/rich-text-types";
 
 interface PostCardProps {
   postsData: Post[];
 }
 
-// makes the p take being showed inline to avoid a break between profilename and the posttext
-// makes the links in the posttext open links in a new tab
-// const options = {
-//   renderNode: {
-//     paragraph: (node, children) => <p className="inline">{children}</p>,
-//     [INLINES.HYPERLINK]: (node, children) => (
-//       <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
-//         {children}
-//       </a>
-//     ),
-//   },
-// };
+makes the p take being showed inline to avoid a break between profilename and the posttext
+makes the links in the posttext open links in a new tab
+const options = {
+  renderNode: {
+    paragraph: (node, children) => <p className="inline">{children}</p>,
+    [INLINES.HYPERLINK]: (node, children) => (
+      <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    ),
+  },
+};
 
 export const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
   return (
@@ -46,7 +46,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
               <div className="p-[16px]">
                 <div>
                   <strong>spiced academy </strong>
-                  {documentToReactComponents(post.posttext.json)}
+                  {documentToReactComponents(post.posttext.json, options)}
                 </div>
               </div>
             </div>
