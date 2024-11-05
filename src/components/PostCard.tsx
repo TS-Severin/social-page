@@ -50,7 +50,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
               />
               <div className="p-[16px]">
                 <div>
-                  <strong>spiced academy </strong>
+                  <strong>{post.profileusername} </strong>
                   {documentToReactComponents(post.posttext.json, options)}
                 </div>
               </div>
