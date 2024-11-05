@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        geistSans: "var(--font-geist-sans)",
+        geistMono: "var(--font-geist-mono)",
+        damion: "var(--font-damion)",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
