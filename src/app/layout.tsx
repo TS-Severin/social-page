@@ -14,7 +14,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 const damion = localFont({
-  src: "./fonts/damion/Damion-Regular.ttf",
+  src: "./fonts/Damion-Regular.ttf",
   variable: "--font-damion",
   weight: "400",
 });
