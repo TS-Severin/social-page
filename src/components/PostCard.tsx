@@ -36,7 +36,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
                   src={post.profilepicture.url}
                   width={40}
                   height={40}
-                  alt="Picture of the author"
+                  alt="image of author"
                   className="rounded-full mr-3"
                 ></Image>
                 <div className="text-base font-bold">

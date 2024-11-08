@@ -11,6 +11,7 @@ profilepicture {
 }
 postpicturesCollection {
   items {
+    description
     url
   }
 }

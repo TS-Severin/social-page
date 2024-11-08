@@ -1,5 +1,5 @@
 interface SliderProps {
-  postpicturesCollection: { items: { url: string }[] };
+  postpicturesCollection: { items: { description: string; url: string }[] };
 }
 
 export const ImageSlider: React.FC<SliderProps> = ({
@@ -10,7 +10,7 @@ export const ImageSlider: React.FC<SliderProps> = ({
   return (
     <>
       {postpicturesCollection.items.map((item) => (
-        <img key={item.url} src={item.url} alt="Post Image" />
+        <img key={item.url} src={item.url} alt={item.description} />
       ))}
     </>
   );
