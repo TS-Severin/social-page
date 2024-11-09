@@ -13,3 +13,16 @@ export interface Post {
   };
   postpicturesCollection: { items: { description: string; url: string }[] };
 }
+
+// Define the type for profile object
+export interface Profile {
+  sys: {
+    id: string;
+  };
+  profilePic: {
+    url: string;
+  };
+  name: string;
+  profileTextDe: { json: Document };
+  profileTextEn: { json: Document };
+}

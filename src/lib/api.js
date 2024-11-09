@@ -20,6 +20,20 @@ posttext {
 }
 `;
 
+// contentmodel for posts
+
+const PROFILE_GRAPHQL_FIELDS = `
+sys {
+  id
+}
+profilePic {
+  url
+}
+name
+profileTextDe { json } 
+profileTextEn { json } 
+`;
+
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -37,7 +51,7 @@ async function fetchGraphQL(query, preview = false) {
       body: JSON.stringify({ query }),
       // Associate all fetches for articles with an "articles" cache tag so content can
       // be revalidated or updated from Contentful on publish
-      next: { tags: ["posts"] },
+      next: { tags: ["posts", "profile"] },
 
     }
   ).then((response) => response.json());
@@ -45,6 +59,10 @@ async function fetchGraphQL(query, preview = false) {
 
 function extractPosts(fetchResponse) {
   return fetchResponse?.data?.postsCollection?.items;
+}
+
+function extractProfile(fetchResponse) {
+  return fetchResponse?.data?.profileCollection?.items;
 }
 
 
@@ -61,6 +79,22 @@ export async function getPosts(
       }`, isDraftMode
   );
   return extractPosts(allPosts);
+}
+
+
+export async function getProfile(
+  isDraftMode = false) {
+  const allProfiles = await fetchGraphQL(
+    `query {
+        profileCollection(preview: ${isDraftMode ? "true" : "false"
+    }) { 
+          items {
+            ${PROFILE_GRAPHQL_FIELDS}
+          }
+        }
+      }`, isDraftMode
+  );
+  return extractProfile(allProfiles);
 }
 
 

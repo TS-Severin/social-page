@@ -10,8 +10,8 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <>
-      <div className="fixed w-full z-10 bg-white">
-        <div className="flex justify-between px-4 pt-4 pb-2 max-w-[640px] mx-auto">
+      <div className="fixed w-full">
+        <div className="flex justify-between px-4 pt-4 pb-2">
           <h1 className="font-damion text-3xl">T.Severin</h1>
 
           <Link href="mailto:tillmann.severin@posteo.de">
@@ -19,8 +19,8 @@ export const Header = () => {
           </Link>
         </div>
       </div>
-      <div className="relative left-0 right-0 max-w-[640px] my-0 mx-auto">
-        <div className="relative top-14 bg-white">
+      <div className="relative z-10 left-0 right-0 max-w-[600px] my-0 mx-auto">
+        <div className="relative top-0 bg-white">
           <div className="flex items-center p-4">
             <Image
               src="https://images.ctfassets.net/5uq6vji4voev/5VTNA2ojnEcYsJKTsrNEOv/177fa8695904de7c7c230ab75e9c7d41/grossmann.jpg"

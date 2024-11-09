@@ -29,8 +29,8 @@ export const PostCard: React.FC<PostCardProps> = ({ postsData }) => {
     <>
       {postsData.map((post) => (
         <Fragment key={post.sys.id}>
-          <div className="max-w-[600px] my-0 mx-auto">
-            <div className="relative top-72 mb-6 bg-white border border-gray-300 rounded shadow-sm">
+          <div className="max-w-[640px] my-0 mx-auto">
+            <div className="relative top-16 mb-6 bg-white border border-gray-300 rounded shadow-sm">
               <div className="flex items-center p-4 border-b border-gray-300">
                 <Image
                   src={post.profilepicture.url}
