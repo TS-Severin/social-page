@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 interface SliderProps {
   postpicturesCollection: { items: { description: string; url: string }[] };

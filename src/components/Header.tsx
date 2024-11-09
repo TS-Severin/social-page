@@ -1,8 +1,5 @@
 import Image from "next/image";
 import { IoPaperPlaneOutline } from "react-icons/io5";
-import { FaInstagram } from "react-icons/fa";
-import { LiaLinkedin } from "react-icons/lia";
-import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 // data: title, mail, picture, descriptionTitle, description paragraph
