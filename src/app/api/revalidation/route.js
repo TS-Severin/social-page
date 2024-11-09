@@ -11,7 +11,7 @@ export async function POST(request) {
 
 
 
-  revalidateTag("posts");
+  revalidateTag("posts", "profile");
 
   return NextResponse.json({ revalidated: true, now: Date.now() });
 }
