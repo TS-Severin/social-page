@@ -47,14 +47,19 @@ export const ImageSlider: React.FC<SliderProps> = ({
         customTransition="all .5"
         transitionDuration={500}
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
         // deviceType={this.props.deviceType}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
         {postpicturesCollection.items.map((item) => (
-          <div>
-            <img key={item.url} src={item.url} alt={item.description} />
+          <div key={item.url}>
+            <Image
+              src={item.url}
+              alt={item.description}
+              width={640}
+              height={640}
+            />
           </div>
         ))}
       </Carousel>
