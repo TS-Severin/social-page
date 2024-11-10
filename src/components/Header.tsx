@@ -6,7 +6,7 @@ import { Profile } from "@/lib/types";
 // data: title, mail, picture, descriptionTitle, description paragraph
 
 interface HeaderProps {
-  profileData: Profile;
+  profileData: Profile[];
 }
 
 export const Header: React.FC<HeaderProps> = ({ profileData }) => {
@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ profileData }) => {
             <div className="text-base font-bold pl-4">Beiträge: 100</div>
           </div>
           <div className="text-base pl-4 pb-4">
-            <h1 className="font-bold">{profileData.name}</h1>
+            <h1 className="font-bold">{profileData[0].name}</h1>
             <p>Entwickler, Autor, Verleger, Übersetzer - Berlin (er/ihn)</p>
             <p>HASHTAG COMPONENT</p>
           </div>
