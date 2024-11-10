@@ -1,10 +1,15 @@
 import Image from "next/image";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import Link from "next/link";
+import { Profile } from "@/lib/types";
 
 // data: title, mail, picture, descriptionTitle, description paragraph
 
-export const Header = () => {
+interface HeaderProps {
+  profileData: Profile;
+}
+
+export const Header: React.FC<HeaderProps> = ({ profileData }) => {
   return (
     <>
       <div className="fixed w-full z-10 bg-white">
@@ -30,7 +35,7 @@ export const Header = () => {
             <div className="text-base font-bold pl-4">Beiträge: 100</div>
           </div>
           <div className="text-base pl-4 pb-4">
-            <h1 className="font-bold">Tillmann Severin</h1>
+            <h1 className="font-bold">{profileData.name}</h1>
             <p>Entwickler, Autor, Verleger, Übersetzer - Berlin (er/ihn)</p>
             <p>HASHTAG COMPONENT</p>
           </div>
