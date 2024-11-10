@@ -32,7 +32,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // Fetch profile directly within the component
-  const profile: Profile[] = await getProfile();
+  const profile: Profile = await getProfile();
   console.log("profile", profile);
 
   return (

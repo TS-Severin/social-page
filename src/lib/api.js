@@ -26,12 +26,16 @@ const PROFILE_GRAPHQL_FIELDS = `
 sys {
   id
 }
+name
 profilePic {
   url
 }
-name
-profileTextDe { json } 
-profileTextEn { json } 
+profileTextDe { 
+  json 
+} 
+profileTextEn { 
+  json 
+} 
 `;
 
 async function fetchGraphQL(query, preview = false) {

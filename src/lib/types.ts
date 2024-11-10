@@ -19,10 +19,11 @@ export interface Profile {
   sys: {
     id: string;
   };
+  name: string;
   profilePic: {
     url: string;
   };
-  name: string;
+
   profileTextDe: { json: Document };
   profileTextEn: { json: Document };
 }
