@@ -6,8 +6,8 @@ export default async function Home() {
   // Fetch posts directly within the component
   const posts: Post[] = await getPosts();
   // Fetch profile directly within the component
-  const profile: Profile = await getProfile();
-  console.log(profile);
+  const profile: Profile[] = await getProfile();
+  console.log("profile", profile);
 
   return (
     <main>
