@@ -28,8 +28,6 @@ const responsive = {
 export const ImageSlider: React.FC<SliderProps> = ({
   postpicturesCollection,
 }) => {
-  console.log(postpicturesCollection);
-
   return (
     <>
       <Carousel

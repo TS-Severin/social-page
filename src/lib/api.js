@@ -26,10 +26,10 @@ const PROFILE_GRAPHQL_FIELDS = `
 sys {
   id
 }
-name
 profilePic {
   url
 }
+name
 profileTextDe { 
   json 
 } 

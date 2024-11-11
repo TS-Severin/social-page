@@ -1,15 +1,23 @@
+"use client";
 import Image from "next/image";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import Link from "next/link";
 import { Profile } from "@/lib/types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // data: title, mail, picture, descriptionTitle, description paragraph
 
 interface HeaderProps {
   profileData: Profile;
+  // isEnglish: boolean;
+  // onHandleToggleLanguage: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ profileData }) => {
+export const Header: React.FC<HeaderProps> = ({
+  profileData,
+  // onHandleToggleLanguage,
+  // isEnglish,
+}) => {
   return (
     <>
       <div className="fixed w-full z-10 bg-white">
@@ -36,7 +44,10 @@ export const Header: React.FC<HeaderProps> = ({ profileData }) => {
           </div>
           <div className="text-base pl-4 pb-4">
             <h1 className="font-bold">{profileData.name}</h1>
-            <p>Entwickler, Autor, Verleger, Übersetzer - Berlin (er/ihn)</p>
+            <div>
+              {documentToReactComponents(profileData.profileTextEn.json)}
+            </div>
+
             <p>HASHTAG COMPONENT</p>
           </div>
         </div>
@@ -44,3 +55,9 @@ export const Header: React.FC<HeaderProps> = ({ profileData }) => {
     </>
   );
 };
+
+{
+  /* <button onClick={onHandleToggleLanguage}>
+{isEnglish ? "Deutsch" : "English"}
+</button> */
+}

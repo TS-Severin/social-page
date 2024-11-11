@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { getProfile } from "@/lib/api";
+
 import localFont from "next/font/local";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Profile } from "../lib/types";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,16 +29,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Fetch profile directly within the component
-  const profile: Profile[] = await getProfile();
-  console.log("profile", profile);
-
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${damion.variable} antialiased`}
       >
-        <Header profileData={profile[0]} />
         {children}
       </body>
     </html>
